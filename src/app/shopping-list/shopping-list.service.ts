@@ -1,4 +1,4 @@
-import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 import { Ingredient } from './../shared/ingredient.model';
 
@@ -8,7 +8,7 @@ export class ShoppingListService {
     new Ingredient('Tomatoes', 10),
   ];
 
-  onAddIngredient = new EventEmitter<Ingredient>();
+  onAddIngredient = new Subject<Ingredient>();
 
   getIngredients() {
     return this.ingredients.slice();
